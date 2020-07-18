@@ -5,9 +5,9 @@ draft: false
 
 [Download my resume](https://github.com/gammons/resume/blob/master/resume.pdf)
 
-# Work
+#### Director of Engineering at ConvertKit
 
-## Director of Engineering at ConvertKit - Jan 2017 to present
+*Jan 2017 - Present*
 
 [ConvertKit][ck] is an email marketing platform that focuses on creators.
 
@@ -34,7 +34,7 @@ We slowly began to pull ourselves out of having the company face a near technica
 
 Through all of this, we haven't scaled the team massively.  We have 18 engineers (including myself) and 49 people at the company in total (as of October 2019).  Efficiency has been the name of the game so far, and I'm proud of what I've been able to accomplish with a small team and limited capital.
 
-## PipelineDeals - VP engineering - 2006 to late 2016
+#### PipelineDeals - VP engineering - 2006 to late 2016
 
 * Built [PipelineDeals][pld] with cofounders from idea to successful bootstrapped SaaS app generating millions in revenue.  Is employee #1.
 * Hired and Manages 3 remote teams of awesome software engineers.
@@ -44,10 +44,7 @@ Through all of this, we haven't scaled the team massively.  We have 18 engineers
 
 ---
 
-# Projects
-
-
-## Ultradeck
+#### Ultradeck
 
 ![](/images/ultradeck.png)
 
@@ -68,7 +65,7 @@ I intend to open-source almost all of Ultradeck, starting with a [stripped-down 
 * Redis for websocket management / realtime
 * Mysql
 
-## Ultralist
+#### Ultralist
 
 ![](/images/ultralist.png)
 
@@ -90,7 +87,7 @@ I was intending to launch Ultralist as a side project that generates revenue. Ho
 * Progressive web app fundamentals
 * material-ui for the CSS / interface
 
-### 12inch.reviews
+#### 12inch.reviews
 
 ![](/images/12inch.png)
 
@@ -103,13 +100,13 @@ I was intending to launch Ultralist as a side project that generates revenue. Ho
 * Netlify lambda functions for access token management
 * No backend!
 
-## demo-cli
+#### demo-cli
 
 ![](/images/demo-cli.png)
 
 Created a [simple library](https://demo-cli.dev) to show terminal-based demos in the browser.  Used in the marketing site for [Ultralist](https://ultralist.io).
 
-## fake_arel
+#### fake_arel
 
 [fake_arel][fa] is a gem I wrote in 2010 that allowed developers to use Rails 3 query syntax in Rails 2.  It accomplished this by clever use of named scopes.
 

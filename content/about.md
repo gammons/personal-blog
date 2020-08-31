@@ -1,10 +1,7 @@
 ---
 title: "About me"
-date: 2020-07-17T15:51:55-04:00
 draft: false
 ---
-
-### About me
 
 * I [lead software teams](https://convertkit.com).
 * I like to [hack on software](https://github.com/gammons).

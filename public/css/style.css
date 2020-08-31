@@ -16,18 +16,6 @@ html {
   background-color: var(--backgroundColor);
 }
 
-h1 {
-  font-size: 1.3em;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-h3 {
-  font-size: 1.1em;
-}
-
 h1,h2,h3 {
   letter-spacing: 0.1rem;
 }

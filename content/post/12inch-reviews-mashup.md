@@ -7,9 +7,7 @@ draft: false
 
 ![](/images/12inch.reviews.png)
 
-There are a couple things to know about me:
-
-1. I'm a huge music <strike>snob</strike> nerd.  I've played in many bands in my teens 20s, and music is a big part of my life.
+1. I'm a huge music nerd.  I've played in many bands in my teens 20s, and music is a big part of my life.
 2. I'm also a big fan of [Pitchfork][pitchfork] music reviews.
 
 There was a mashup site I was using called [Pitchify][pitchify], which was no longer updating, and it eventually got taken down.  So I did what any engineer would do and I created my own mashup!

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en"><head>
+    <title>What I learned creating 12inch.reviews, a mashup of Spotify and Pitchfork</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/theme.css"/>
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+</head>
+
+<body>
+        <div id="content" class="mx-auto"><header class="container mt-sm-5 mt-4 mb-4 mt-xs-1">
+  <div class="row">
+    <div class="col-sm-4 col-12 text-sm-right text-center pt-sm-4">
+      <a href="/" class="text-decoration-none">
+        <img id="home-image" class="rounded-circle"
+                             
+                             src="/images/avatar.png"
+                             
+                             />
+      </a>
+    </div>
+    <div class="col-sm-8 col-12 text-sm-left text-center">
+      <h2 class="m-0 mb-2 mt-4">
+        <a href="/" class="text-decoration-none">
+          Grant Ammons
+        </a>
+      </h2>
+      <p class="text-muted mb-1">
+        Doin' software and other cool stuff
+      </p>
+      <ul id="nav-links" class="list-inline mb-2">
+        
+        
+        <li class="list-inline-item">
+          <a class="badge badge-white " href="/about/" title="About me">About me</a>
+        </li>
+        
+        <li class="list-inline-item">
+          <a class="badge badge-white " href="/portfolio/" title="Portfolio">Portfolio</a>
+        </li>
+        
+      </ul>
+      <ul id="nav-social" class="list-inline">
+        
+        <li class="list-inline-item mr-3">
+          <a href="http://github.com/gammons" target="_blank">
+            <i class="fab fa-github fa-1x text-muted"></i>
+          </a>
+        </li>
+        
+        <li class="list-inline-item mr-3">
+          <a href="https://www.linkedin.com/in/grant-ammons" target="_blank">
+            <i class="fab fa-linkedin-in fa-1x text-muted"></i>
+          </a>
+        </li>
+        
+        <li class="list-inline-item mr-3">
+          <a href="https://twitter.com/gammons" target="_blank">
+            <i class="fab fa-twitter fa-1x text-muted"></i>
+          </a>
+        </li>
+        
+        <li class="list-inline-item mr-3">
+          <a href="mailto:grant@grant.dev" target="_blank">
+            <i class="fa fa-envelope fa-1x text-muted"></i>
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <hr />
+</header>
+
+<div class="container">
+    <div class="pl-sm-2">
+        <div class="mb-3">
+            <h3 class="mb-0">What I learned creating 12inch.reviews, a mashup of Spotify and Pitchfork</h3>
+            
+            <small class="text-muted">Published December 22, 2019</small>
+        </div>
+
+        <article>
+            <p><img src="/images/12inch.reviews.png" alt=""></p>
+<p>There are a couple things to know about me:</p>
+<ol>
+<li>I&rsquo;m a huge music <!-- raw HTML omitted -->snob<!-- raw HTML omitted --> nerd.  I&rsquo;ve played in many bands in my teens 20s, and music is a big part of my life.</li>
+<li>I&rsquo;m also a big fan of <a href="https://pitchfork.com/">Pitchfork</a> music reviews.</li>
+</ol>
+<p>There was a mashup site I was using called <a href="http://pitchify.com">Pitchify</a>, which was no longer updating, and it eventually got taken down.  So I did what any engineer would do and I created my own mashup!</p>
+<p><a href="https://12inch.reviews">12inch.reviews</a> is a mashup of Pitchfork&rsquo;s <a href="https://pitchfork.com/reviews/albums/">album reviews</a> with Spotify&rsquo;s <a href="https://developer.spotify.com/documentation/web-playback-sdk/quick-start/">web playback SDK</a>.  It utilizes the browser&rsquo;s <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB API</a> to allow for fast, responsive searching and sorting of 17k+ album reviews, and allows you to play the full album right in the browser!</p>
+<p>As with any side project, I had a few learning goals in mind that I wanted to bake in:</p>
+<ol>
+<li>Continue to invest in learning React, specifically <a href="https://reactjs.org/docs/hooks-intro.html">React hooks</a>, and progressive web apps.</li>
+<li>Learn <a href="https://tailwindcss.com/">tailwind.css</a></li>
+<li>I wanted it to include <em>all</em> of Pitchfork&rsquo;s reviews, and have them be easily searchable.  There are a lot of seminal albums that I just haven&rsquo;t had exposure to.  Being able to find them easily would be a requirement.</li>
+<li>I wanted to leverage different and interesting browser technologies to keep the main functionality of this site all on the frontend.</li>
+<li>I wanted it to be completely completely <a href="https://github.com/gammons/12inch.reviews">open source</a>.</li>
+</ol>
+<p>Pitchfork has over 20k reviews on their site, so being able to store that many records on the frontend, specifically in Javascript, would be a challenge.  Each browser has different <a href="https://developers.google.com/web/tools/workbox/guides/storage-quota">storage quotas</a> that aren&rsquo;t particularly well-documented.  So I needed to think about how to work around these quotas in a seamless and transparent way.</p>
+<h2 id="the-backend">The backend</h2>
+<p>12inch.reviews uses a simple(ish) <a href="https://github.com/gammons/12inch.reviews/blob/master/retriever/retrieve.rb">retriever script</a> script that does the following:</p>
+<ol>
+<li>utilizes Pitchfork&rsquo;s <a href="https://pitchfork.com/api/v2/search/?types=reviews">undocumented API</a> to find new albums since the last time the script was run</li>
+<li>Attempts to find that album using Spotify&rsquo;s <a href="https://developer.spotify.com/documentation/web-api/reference/search/search/">search API</a>.</li>
+<li>If found, add that album to a simple <a href="https://www.sqlite.org/index.html">SQLite</a> DB</li>
+</ol>
+<p>There is another backend function that will take the contents of the SQLite DB and to create a series of JSON files, which includes all the data the frontend needs.  The structure of each JSON album looks like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    {
+      <span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">13501</span>,
+      <span style="color:#f92672">&#34;pitchfork_id&#34;</span>: <span style="color:#e6db74">&#34;5929e2d1eb335119a49ef060&#34;</span>,
+      <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;Out of Tune&#34;</span>,
+      <span style="color:#f92672">&#34;artist&#34;</span>: <span style="color:#e6db74">&#34;Mojave 3&#34;</span>,
+      <span style="color:#f92672">&#34;rating&#34;</span>: <span style="color:#e6db74">&#34;6.3&#34;</span>,
+      <span style="color:#f92672">&#34;bnm&#34;</span>: <span style="color:#66d9ef">false</span>,
+      <span style="color:#f92672">&#34;bnr&#34;</span>: <span style="color:#66d9ef">false</span>,
+      <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;4AD&#34;</span>,
+      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;https://pitchfork.com/reviews/albums/5376-out-of-tune/&#34;</span>,
+      <span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Out of Tune is a Steve Martin album. Yes, I&#39;ll explain: Once upon a time, there was ...&#34;</span>,
+      <span style="color:#f92672">&#34;genre&#34;</span>: <span style="color:#e6db74">&#34;Rock&#34;</span>,
+      <span style="color:#f92672">&#34;spotify_album_id&#34;</span>: <span style="color:#e6db74">&#34;2TLUvacBePI5753CqHPpxF&#34;</span>,
+      <span style="color:#f92672">&#34;spotify_artist_id&#34;</span>: <span style="color:#e6db74">&#34;4jSYHcSo85heWskYvAULio&#34;</span>,
+      <span style="color:#f92672">&#34;image_url&#34;</span>: <span style="color:#e6db74">&#34;https://i.scdn.co/image/ab67616d0000b27360b1fa1c0a15bcb97f9544a2&#34;</span>,
+      <span style="color:#f92672">&#34;page&#34;</span>: <span style="color:#66d9ef">null</span>,
+      <span style="color:#f92672">&#34;created_at&#34;</span>: <span style="color:#e6db74">&#34;1999-01-12 06:00:00 UTC&#34;</span>,
+      <span style="color:#f92672">&#34;updated_at&#34;</span>: <span style="color:#e6db74">&#34;2019-10-25 12:33:03 UTC&#34;</span>,
+      <span style="color:#f92672">&#34;timestamp&#34;</span>: <span style="color:#ae81ff">916120800</span>
+    }<span style="color:#960050;background-color:#1e0010">,</span>
+</code></pre></div><p>Once the JSON files are created, they are uploaded to S3 for the frontend to use.  Each album entry has all the info needed in order for Spotify&rsquo;s web SDK to use them on the frontend, and to be searchable.</p>
+<p>The <a href="https://github.com/gammons/12inch.reviews/blob/master/retriever/Rakefile">retriever Rakefile</a> also has functions to backfill all albums (takes multiple hours!) and has some utility functions to be able to create a new SQLite DB and other functions to massage the data into the correct format.</p>
+<p>The main task, <code>refresh_and_upload</code> runs hourly.  Currently it&rsquo;s running as a <a href="https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/">Kubernetes CronJob</a> on my homelab Kube cluster (I&rsquo;ll talk more about that in another post).</p>
+<p><strong>Netlify Lambda functions</strong></p>
+<p>12inch.reviews is hosted on <a href="https://netlify.com">Netlify</a>, mainly because Netlify is amazing.  It provides a seamless CI/CD pipeline, SSL, and <a href="https://www.netlify.com/products/functions/">AWS Lambda-like functions</a> - all for free.</p>
+<p>I use these functions to &ldquo;log in&rdquo; a user via Spotify Oauth.  I would have done this all on the frontend, except for the fact that Oauth requires a secret token and that can&rsquo;t be exposed on the frontend.</p>
+<p>Since Spotify&rsquo;s access tokens are short-lived (1 hour max!) there is also a secondary function that will renew an access token seamlessly upon playback.</p>
+<p>Once an access token is obtained, state is stored via the browser&rsquo;s <code>LocalStorage</code> API.</p>
+<h3 id="the-frontend">The frontend</h3>
+<p>The frontend of 12inch.reviews is a relatively simple <code>create-react-app</code> single-page app, that provides search and sort functionality, as well as the ability to play any album using Spotify&rsquo;s <a href="https://developer.spotify.com/documentation/web-playback-sdk/quick-start/">web playback SDK</a>.</p>
+<p><strong>Getting all the album data</strong></p>
+<p>When you visit 12inch.reviews the first time, it will show the albums from a small JSON file called <code>initial.json</code>.  This file includes only the first 25 most recent albums, so we have something to paint on the screen.</p>
+<p>Then, the rest of the album data will be backfilled in via a series of <code>fetch</code>es to retrieve all of the JSON files.  I decided to partition each JSON file with 1000 albums, so there are 17 files altogether.  Each album JSON file is at least 600k uncompressed, so there is probably room for more optimization here.</p>
+<p>After each JSON file is retrieved, they are stored in an IndexedDB on the frontend.  Subsequent visits to 12inch.reviews don&rsquo;t require the large JSON payload  - it will only load the delta payloads into the DB.  I&rsquo;m taking advantage of the fact that these reviews are immutable - once they are written they will never change.</p>
+<p><strong>Searching albums</strong></p>
+<p>Although IndexedDB is great for <em>storing</em> this data, there is currently no functionality to actually <em>query</em> IndexedDB like a regular database.  So in order for 12inch.reviews to do searching and sorting, all of the data must be loaded into a <a href="https://github.com/gammons/12inch.reviews/blob/master/src/app.js#L53">simple javascript array</a>.</p>
+<p><strong>Playing albums</strong></p>
+<p>I utilized Spotify&rsquo;s <a href="https://developer.spotify.com/documentation/web-playback-sdk/quick-start/">Web playback SDK</a> to do the actual playing.  It provides a series of hooks to use in order to initialize the player, and to do the actual playing.</p>
+<p>I wrapped the actual playing into a <a href="https://github.com/gammons/12inch.reviews/blob/master/src/models/spotifyPlayer.js">simple class</a> that ensures a refreshed access token is always provided.</p>
+<p>The <a href="https://github.com/gammons/12inch.reviews/blob/master/src/components/player.js">player component</a> is one of the most complex react components in the app.  Although the web playback SDK has its own state, I had to essentially &ldquo;sync up&rdquo; the player component&rsquo;s state with the SDK&rsquo;s state.  As with any type of synchronization, there are <em>probably</em> bugs keeping these 2 things in sync with each other.</p>
+<p>The [progress bar][progress_bar] is clickable and utilizes some simple CSS animations to look and feel like a regular music progress bar.</p>
+<p>IANA designer, but I was heavily influenced by Tesla&rsquo;s UX when designing the player component.</p>
+<h3 id="criticism-of-spotifys-web-playback-sdk">Criticism of Spotify&rsquo;s Web Playback SDK</h3>
+<p>My experience with Spotify&rsquo;s web playback SDK has been sub-par.  The SDK does not have a <code>package.json</code> file, and therefore is not in the npm universe.  There isn&rsquo;t an easy way to hook the SDK into a React or Vue app.  This required a lot of <a href="https://github.com/gammons/12inch.reviews/blob/master/src/components/player.js#L52-L58">manual syncing</a> code that is probably hiding bugs.</p>
+<p>They have a <a href="https://github.com/spotify/web-playback-sdk">public issue tracker</a> on Github, but many of the issues don&rsquo;t have answered questions.</p>
+<p>It&rsquo;s hard for me to understand who the target audience was for this SDK.  I think it would benefit greatly from being open source and part of the NPM ecosystem.  This would allow others to create wrappers for popular frameworks, which would allow me to remove my terrible syncing code.</p>
+<h3 id="lessons-learned--planned-optimizations">Lessons learned + planned optimizations</h3>
+<p>This was a really fun project to work on.  It took me about 6 weeks of coding, utilizing my &ldquo;<a href="https://grant.dev/2016/07/22/the-life-changing-benefits-of-side-projects/">side project</a> hours&rdquo; (roughly 5:30am - 7am on weekdays).</p>
+<p>I learned a bunch of things:</p>
+<ul>
+<li>Tailwind.css</li>
+<li>IndexedDB</li>
+<li>Netlify Lambda Functions</li>
+<li>Spotify&rsquo;s APIs</li>
+</ul>
+<p>12inch.reviews is a toy.  It has <em>enormous</em> shortcomings, mainly the fact that it needs to backfill nearly 20Mb of album review data in order to work well.  This is insanely inefficient and wouldn&rsquo;t be appropriate for anything other than a personal side project site coded for educational purposes.</p>
+<p>Other shortcomings:</p>
+<ul>
+<li>I don&rsquo;t feel like I leaned into Flow types as much as I could.</li>
+<li>Overall performance is still not great, as measured by Chromes Dev Tools.</li>
+<li>I should utilize a service worker to populate the indexeddb.</li>
+<li>Could create a GraphQL backend to do the data serving, to alleviate the need to bring all 20MB of data to the frontend.</li>
+</ul>
+
+        </article>
+    </div>
+
+            </div>
+        </div><footer class="text-center pb-1">
+    <small class="text-muted">
+        
+            &copy; Copyright 2020 by Grant Ammons
+        
+    </small>
+</footer>
+
+</body>
+</html>

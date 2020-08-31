@@ -1,0 +1,108 @@
+/***********************
+ * Main shit
+***********************/
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500&display=swap');
+
+:root {
+  --backgroundColor: #1d3049;
+  --mainColor: #fdcb9e;
+  --linkColor: #ff7171;
+}
+
+html {
+  font-family: "Inconsolata", sans-serif;
+  color: var(--mainColor);
+  background-color: var(--backgroundColor);
+}
+
+h1,h2,h3 {
+  letter-spacing: 0.1rem;
+}
+
+a {
+  color: var(--linkColor);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p > code {
+  font-family: "Inconsolata", sans-serif;
+  color: var(--linkColor);
+  background-color: #3f516A;
+  padding: 2px;
+
+}
+
+pre {
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+article {
+  max-width: 768px;
+  line-height: 1.4;
+  font-size: 20px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  padding-left: 10px;
+}
+
+/***********************
+ * Specific shit
+***********************/
+
+#header-top {
+  display: flex;
+  flex-direction: row;
+}
+
+#tagline {
+  padding-top: 5px;
+}
+
+#header-top #name {
+  padding-left: 20px;
+}
+
+#nav-social {
+  list-style-type: none;
+  padding: 0;
+}
+
+#nav-social li {
+  display: inline;
+  padding-right: 5px;
+}
+
+#nav-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+#nav-links li {
+  padding-right: 20px;
+
+  display: inline;
+}
+
+#home-image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}

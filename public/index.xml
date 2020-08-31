@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Grant Ammons</title>
+    <link>http://grant.dev/</link>
+    <description>Recent content on Grant Ammons</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2020 by Grant Ammons</copyright>
+    <lastBuildDate>Sun, 22 Dec 2019 15:40:11 -0400</lastBuildDate>
+    
+	<atom:link href="http://grant.dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>http://grant.dev/about/</link>
+      <pubDate>Fri, 17 Jul 2020 15:51:55 -0400</pubDate>
+      
+      <guid>http://grant.dev/about/</guid>
+      <description>About me  I lead software teams. I like to hack on software. I have a Side Hustle called Ultralist. I like to run. I&amp;rsquo;m a dad of 2 boys. It&amp;rsquo;s fun.  Contact me  Email Twitter LinkedIn  </description>
+    </item>
+    
+    <item>
+      <title>What I learned creating 12inch.reviews, a mashup of Spotify and Pitchfork</title>
+      <link>http://grant.dev/post/12inch-reviews-mashup/</link>
+      <pubDate>Sun, 22 Dec 2019 15:40:11 -0400</pubDate>
+      
+      <guid>http://grant.dev/post/12inch-reviews-mashup/</guid>
+      <description>There are a couple things to know about me:
+ I&amp;rsquo;m a huge music snobnerd. I&amp;rsquo;ve played in many bands in my teens 20s, and music is a big part of my life. I&amp;rsquo;m also a big fan of Pitchfork music reviews.  There was a mashup site I was using called Pitchify, which was no longer updating, and it eventually got taken down. So I did what any engineer would do and I created my own mashup!</description>
+    </item>
+    
+    <item>
+      <title>The life-changing benefits of side projects</title>
+      <link>http://grant.dev/post/side-projects/</link>
+      <pubDate>Fri, 22 Jul 2016 15:40:11 -0400</pubDate>
+      
+      <guid>http://grant.dev/post/side-projects/</guid>
+      <description>I am an avid side project-er. At any point in time I always have at least one “thing” going on in the background that feeds my appetite for playing with new tech and learning new stuff.
+Side projects can be liberating and super fun. They are great for your career overall and could lead to great opportunities. These side projects have had an amazing effect on my career, and they can help yours immensely as well!</description>
+    </item>
+    
+    <item>
+      <title>Grant Ammons portfolio</title>
+      <link>http://grant.dev/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://grant.dev/portfolio/</guid>
+      <description>Download my resume
+Director of Engineering at ConvertKit Jan 2017 - Present
+ConvertKit is an email marketing platform that focuses on creators.
+ Scaled engineering org from 3 to 25+ engineers (we&amp;rsquo;re still hiring). ConvertKit has solid growth. I joined when we were at around $6M in ARR, and I helped scale it to $24+M. Implemented many processes that were nascent or missing - hiring, software delivery, QA, reviews / promotions, etc.</description>
+    </item>
+    
+  </channel>
+</rss>

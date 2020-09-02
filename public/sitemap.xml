@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://grant.dev/about/</loc>
-    <lastmod>2020-07-17T15:51:55-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://grant.dev/</loc>
     <lastmod>2019-12-22T15:40:11-04:00</lastmod>
   </url>
@@ -25,6 +20,10 @@
   <url>
     <loc>http://grant.dev/post/side-projects/</loc>
     <lastmod>2016-07-22T15:40:11-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://grant.dev/about/</loc>
   </url>
   
   <url>

@@ -10,7 +10,7 @@
           <a href="/">Grant Ammons </a>
         </h2>
 
-        <ul id="nav-social">
+        <ul class="header-ul">
           {{ range .Site.Params.social }}
           <li>
             <a href="{{ .href }}" target="_blank">
@@ -28,7 +28,7 @@
         Doin' software and other cool stuff
       </div>
 
-      <ul id="nav-links" class="list-inline mb-2">
+      <ul class="header-ul">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
         <li class="list-inline-item">

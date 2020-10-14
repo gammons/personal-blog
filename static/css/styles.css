@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;500&display=swap');
 
 :root {
-  --backgroundColor: #1d3049;
-  --mainColor: #fddbae;
-  --linkColor: #ff7171;
+  --backgroundColor: #1a1c20;
+  --mainColor: #e8e8e8;
+  --linkColor: #fe7171;
 }
 
 html {
@@ -19,7 +19,7 @@ html {
 }
 
 h1 {
-  font-size: 1.3em;
+  font-size: 1.5em;
 }
 
 h2 {
@@ -46,7 +46,7 @@ a:hover {
 p > code {
   font-family: "Inconsolata", sans-serif;
   color: var(--linkColor);
-  background-color: #2f415A;
+  background-color: #111;
   padding: 2px;
 
 }
@@ -75,15 +75,32 @@ body {
   padding: 10px;
 }
 
-.header-ul {
+header {
+  padding-bottom: 35px;
+}
+
+.header-ul, .header-ul-social {
   list-style-type: none;
   padding: 0;
 }
 
 .header-ul > li {
   display: inline;
-  padding-right: 5px;
+  padding-right: 30px;
+  font-size: 25px;
 }
+
+.header-ul-social > li {
+  display: inline;
+  padding-right: 20px;
+  font-size: 20px;
+}
+
+.header-ul-social > li a:hover {
+  text-decoration: none;
+}
+
+
 
 /***********************
  * Specific shit
@@ -92,14 +109,17 @@ body {
 #header-top {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 #tagline {
   padding-top: 5px;
+  padding-bottom: 20px;
 }
 
-#header-top #name {
+#name {
   padding-left: 20px;
+  font-size: 30px;
 }
 
 #home-image {

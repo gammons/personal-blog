@@ -63,7 +63,7 @@ The [retriever Rakefile][retriever_rakefile] also has functions to backfill all 
 
 The main task, `refresh_and_upload` runs hourly.  Currently it's running as a [Kubernetes CronJob][cronjob] on my homelab Kube cluster (I'll talk more about that in another post).
 
-**Netlify Lambda functions**
+### Netlify Lambda functions
 
 12inch.reviews is hosted on [Netlify][netlify], mainly because Netlify is amazing.  It provides a seamless CI/CD pipeline, SSL, and [AWS Lambda-like functions][functions] - all for free.
 
@@ -77,7 +77,7 @@ Once an access token is obtained, state is stored via the browser's `LocalStorag
 
 The frontend of 12inch.reviews is a relatively simple `create-react-app` single-page app, that provides search and sort functionality, as well as the ability to play any album using Spotify's [web playback SDK][sdk].
 
-**Getting all the album data**
+### Getting all the album data
 
 When you visit 12inch.reviews the first time, it will show the albums from a small JSON file called `initial.json`.  This file includes only the first 25 most recent albums, so we have something to paint on the screen.
 
@@ -85,11 +85,11 @@ Then, the rest of the album data will be backfilled in via a series of `fetch`es
 
 After each JSON file is retrieved, they are stored in an IndexedDB on the frontend.  Subsequent visits to 12inch.reviews don't require the large JSON payload  - it will only load the delta payloads into the DB.  I'm taking advantage of the fact that these reviews are immutable - once they are written they will never change.
 
-**Searching albums**
+### Searching albums
 
 Although IndexedDB is great for *storing* this data, there is currently no functionality to actually *query* IndexedDB like a regular database.  So in order for 12inch.reviews to do searching and sorting, all of the data must be loaded into a [simple javascript array][albumstore].
 
-**Playing albums**
+### Playing albums
 
 I utilized Spotify's [Web playback SDK][sdk] to do the actual playing.  It provides a series of hooks to use in order to initialize the player, and to do the actual playing.
 

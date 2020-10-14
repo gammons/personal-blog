@@ -1,24 +1,24 @@
 ---
-title: "Grant Ammons portfolio"
+title: "My portfolio"
 draft: false
 ---
 
 [Download my resume](/assets/grant-ammons-resume.pdf)
 
-#### Director of Engineering at ConvertKit
+## Director of Engineering at ConvertKit
 
-*Jan 2017 - Present*
+*Jan 2017 - Oct 2020*
 
 [ConvertKit][ck] is an email marketing platform that focuses on creators.
 
-* Scaled engineering org from **3 to 25+ engineers** (we're still hiring).  ConvertKit has [solid growth](https://convertkit.baremetrics.com/).  I joined when we were at around $6M in ARR, and I helped scale it to $24+M.
+* Scaled engineering org from **3 to 25+ engineers** (we're still hiring).  ConvertKit has [solid growth](https://convertkit.baremetrics.com/).  I joined when we were at around $6M in ARR, and I helped scale it to nearly $25M.
 * Implemented many processes that were nascent or missing - hiring, software delivery, QA, reviews / promotions, etc. Helped ensure each process is effective.
 * Scaled the team to squads, with squad leads.
 * Migrated production infrastructure from Heroku to AWS.
 * Helped set up teams to handle compliance + deliverability.
 * Helped scale infrastructure to handle 1B+ email sends / month, as well as managing click, open, and delivery events in realtime.
 
-#### PipelineDeals - VP engineering - 2006 to late 2016
+## PipelineDeals - VP engineering - 2006 to late 2016
 
 [PipelineDeals][pld] is a SaaS CRM similar to close.io, Pipedrive, Salesforce, etc.
 
@@ -30,9 +30,9 @@ draft: false
 
 ---
 
-## Cool side projects
+# Side projects
 
-#### Ultralist
+## Ultralist
 
 ![](/images/ultralist.png)
 
@@ -53,7 +53,7 @@ draft: false
 
 [Github repo for Ultralist](https://github.com/ultralist)
 
-#### Ultradeck
+## Ultradeck
 
 ![](/images/ultradeck.png)
 
@@ -75,7 +75,7 @@ I intend to open-source almost all of Ultradeck, starting with a [stripped-down 
 * Mysql
 
 
-#### 12inch.reviews
+## 12inch.reviews
 
 ![](/images/12inch.png)
 
@@ -90,7 +90,7 @@ I intend to open-source almost all of Ultradeck, starting with a [stripped-down 
 
 [Github repo for 12inch.reviews](https://github.com/gammons/12inch.reviews)
 
-#### demo-cli
+## demo-cli
 
 ![](/images/demo-cli.png)
 
@@ -98,7 +98,7 @@ Created a [simple library](https://demo-cli.dev) to show terminal-based demos in
 
 [Github repo for demo-cli](https://github.com/gammons/demo-cli)
 
-#### fake_arel
+## fake_arel
 
 [fake_arel][fa] is a gem I wrote in 2010 that allowed developers to use Rails 3 query syntax in Rails 2.  It accomplished this by clever use of named scopes.
 

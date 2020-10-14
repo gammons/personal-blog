@@ -18,6 +18,11 @@ html {
   margin: auto;
 }
 
+h1,h2,h3,h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 h1 {
   font-size: 1.5em;
 }
@@ -28,10 +33,6 @@ h2 {
 
 h3 {
   font-size: 1.1em;
-}
-
-h1,h2,h3 {
-  letter-spacing: 0.1rem;
 }
 
 a {
@@ -58,12 +59,12 @@ pre {
 }
 
 p {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 article {
-  line-height: 1.4;
+  line-height: 1.2;
   font-size: 20px;
 }
 
@@ -98,6 +99,11 @@ header {
 
 .header-ul-social > li a:hover {
   text-decoration: none;
+}
+
+article li {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 

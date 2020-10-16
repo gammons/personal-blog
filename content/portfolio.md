@@ -12,8 +12,9 @@ draft: false
 [ConvertKit][ck] is an email marketing platform that focuses on creators.
 
 * Scaled engineering org from **3 to 25+ engineers** (we're still hiring).  ConvertKit has [solid growth](https://convertkit.baremetrics.com/).  I joined when we were at around $6M in ARR, and I helped scale it to nearly $25M.
+* **Coached, mentored, and led** a team of 4 engineering managers.
 * Implemented many processes that were nascent or missing - hiring, software delivery, QA, reviews / promotions, etc. Helped ensure each process is effective.
-* Scaled the team to squads, with squad leads.
+* Built 4 cross-functional squads consisting of 3-7 engineers.
 * Migrated production infrastructure from Heroku to AWS.
 * Helped set up teams to handle compliance + deliverability.
 * Helped scale infrastructure to handle 1B+ email sends / month, as well as managing click, open, and delivery events in realtime.

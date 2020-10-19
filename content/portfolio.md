@@ -5,32 +5,6 @@ draft: false
 
 [Download my resume](/assets/grant-ammons-resume.pdf)
 
-## Director of Engineering at ConvertKit
-
-*Jan 2017 - Oct 2020*
-
-[ConvertKit][ck] is an email marketing platform that focuses on creators.
-
-* Scaled engineering org from **3 to 25+ engineers** (we're still hiring).  ConvertKit has [solid growth](https://convertkit.baremetrics.com/).  I joined when we were at around $6M in ARR, and I helped scale it to nearly $25M.
-* **Coached, mentored, and led** a team of 4 engineering managers.
-* Implemented many processes that were nascent or missing - hiring, software delivery, QA, reviews / promotions, etc. Helped ensure each process is effective.
-* Built 4 cross-functional squads consisting of 3-7 engineers.
-* Migrated production infrastructure from Heroku to AWS.
-* Helped set up teams to handle compliance + deliverability.
-* Helped scale infrastructure to handle 1B+ email sends / month, as well as managing click, open, and delivery events in realtime.
-
-## PipelineDeals - VP engineering - 2006 to late 2016
-
-[PipelineDeals][pld] is a SaaS CRM similar to close.io, Pipedrive, Salesforce, etc.
-
-* Built [PipelineDeals][pld] with cofounders from idea to successful bootstrapped SaaS app generating millions in revenue.  Is employee #1.
-* Hired and Managed 3 remote teams of awesome software engineers.
-* [Ensured the culture is strong and vibrant](https://medium.com/@gammons/4-awesome-ways-to-level-up-your-dev-team-32ab43f90678#.z6bh97clv), even though team was remote.  Developer happiness and productivity were my primary concerns, while at the same time keeping accountability with the business side.
-* [Crafted + continually honed][scrum] software delivery process to ensure high quality and tight collaboration.  Strived to keep process minimal.
-* Managed a large production infrastructure in AWS, overseeing 50+ instances.  Implemented best-in-class practices to ensure speed, scalability, and uptime.   Achieved 99.999% uptime in 2015.  Kept infrastructure costs well below [SaaS averages][saas] by strategic use + planning of reserved instances.
-
----
-
 # Side projects
 
 ## Ultralist
@@ -62,7 +36,7 @@ Built my own SaaS, called Ultradeck.  Ultradeck was a developer-focused app to q
 
 It did not get traction, but I learned a ton about product development.
 
-While Ultradeck is no longer online, the [storybook](https://stories.ultradeck.co) still is.  The storybook gives you an idea of the breadth of the app.
+While Ultradeck is no longer online, the [storybook](https://keen-brattain-61ddf6.netlify.app/) still is.  The storybook gives you an idea of the breadth of the app.
 
 I intend to open-source almost all of Ultradeck, starting with a [stripped-down version of the frontend](https://github.com/gammons/ultradeck-frontend) that communicates via a go-based binary to drive the slides.
 

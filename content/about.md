@@ -1,6 +1,7 @@
 ---
 title: "About me"
 draft: false
+date: false
 ---
 
 * I [lead software teams](https://convertkit.com).

@@ -6,9 +6,13 @@
       </a>
 
       <div id="name">
-        <h2>
+        <h1>
           <a href="/">Grant Ammons </a>
-        </h2>
+        </h1>
+
+        <div id="tagline">
+          I blog about engineering leadership, software design, and side projects.
+        </div>
 
         <ul class="header-ul-social">
           {{ range .Site.Params.social }}
@@ -19,15 +23,11 @@
           </li>
           {{ end }}
         </ul>
-      </div>
 
+      </div>
     </div>
+
     <div>
-
-      <div id="tagline">
-        I blog about engineering leadership, software design, and side projects.
-      </div>
-
       <ul class="header-ul">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
@@ -37,6 +37,7 @@
         {{ end }}
       </ul>
     </div>
+
   </div>
   <hr />
 </header>

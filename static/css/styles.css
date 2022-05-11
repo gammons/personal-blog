@@ -7,6 +7,7 @@
 :root {
   --backgroundColor: #1a1c20;
   --mainColor: #e8e8e8;
+  --mutedColor: #aaa;
   --linkColor: #fe7171;
 }
 
@@ -18,26 +19,33 @@ html {
   margin: auto;
 }
 
+img {
+  max-width: 100%;
+}
+
+body {
+  padding: 10px;
+}
+
 h1,h2,h3,h4 {
-  padding-top: 30px;
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
 h1 {
-  font-size: 1.7em;
-}
-
-h2 {
   font-size: 1.5em;
 }
 
-h3 {
+h2 {
   font-size: 1.3em;
 }
 
+h3 {
+  font-size: 1.2em;
+}
+
 h4 {
-  font-size: 1.1em;
+  font-size: 1.0em;
 }
 
 a {
@@ -53,19 +61,15 @@ ol {
   margin-top: 0;
 }
 
-p > code {
-  font-family: "Inconsolata", sans-serif;
-  color: var(--linkColor);
-  background-color: #111;
-  padding: 2px;
-
-}
-
 pre {
   font-size: 14px;
   white-space: pre-wrap;
   overflow: hidden;
 }
+
+/***********************
+ * Articles
+***********************/
 
 article p {
   margin-bottom: 40px;
@@ -102,13 +106,21 @@ article blockquote {
   padding-left: 20px;
 }
 
-img {
-  max-width: 100%;
+article li {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-body {
-  padding: 10px;
+p > code {
+  font-family: "Inconsolata", sans-serif;
+  color: var(--linkColor);
+  background-color: #111;
+  padding: 2px;
 }
+
+/***********************
+ * Top header
+***********************/
 
 header {
   padding-bottom: 35px;
@@ -117,6 +129,11 @@ header {
 .header-ul, .header-ul-social {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+}
+
+.header-ul {
+  padding-top: 30px;
 }
 
 .header-ul > li {
@@ -135,35 +152,32 @@ header {
   text-decoration: none;
 }
 
-article li {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-
-
-/***********************
- * Specific shit
-***********************/
-
 #header-top {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+#header-top > img {
+  width: 100%;
+}
+
 #tagline {
   padding-top: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  color: var(--mutedColor);
 }
 
 #name {
   padding-left: 20px;
-  font-size: 30px;
+}
+
+#name > h1 {
+  font-size: 3.0em;
 }
 
 #home-image {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }

@@ -1,3 +1,4 @@
 # Local Netlify folder
 .netlify
 .todos.json
+.hugo_build.lock

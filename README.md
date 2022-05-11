@@ -13,4 +13,5 @@ Blog automatically gets published when pushing to main.
 - [ ] Fix section headers to make them stand out more
 - [ ] possibly pick a better color scheme
 - [ ] favicon
+- [ ] fix UL heights
 

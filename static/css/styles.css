@@ -3,17 +3,17 @@
 ***********************/
 
 @import "reset.css";
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-  --backgroundColor: #14213d;
+  --backgroundColor: #1a1c20;
   --mainColor: #ccc;
   --mutedColor: #999;
   --linkColor: #f07167;
 }
 
 html {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: "Inconsolata", sans-serif;
   color: var(--mainColor);
   background-color: var(--backgroundColor);
   max-width: 900px;
@@ -131,7 +131,7 @@ article li {
 }
 
 p > code {
-  font-family: "Roboto Mono", sans-serif;
+  font-family: "Inconsolata", sans-serif;
   color: var(--linkColor);
   background-color: #111;
   padding: 2px;
